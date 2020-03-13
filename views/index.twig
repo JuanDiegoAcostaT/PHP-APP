@@ -1,0 +1,180 @@
+{# <!-- ?php
+
+// require_once ('vendor/autoload.php');
+
+
+// use Illuminate\Database\Capsule\Manager as Capsule;
+//  use App\models\{Job, Project};  
+ //EL RESTO SE QUITO PORQUE LO PUSIMOS EN LA CARPETA DEL FRONT CONTROLLER EN DONDE SE VA A MANDAR A PRODUCCION, AQUI ES DESARROLLO
+
+// $capsule = new Capsule;
+
+// $capsule->addConnection([
+//     'driver'    => 'mysql',
+//     'host'      => 'localhost',
+//     'database'  => 'coursephp',
+//     'username'  => 'root',
+//     'password'  => 'Motocros123',
+//     'charset'   => 'utf8',
+//     'collation' => 'utf8_unicode_ci',
+//     'prefix'    => '',
+// ]);
+
+// // Make this Capsule instance available globally via static methods... (optional)
+// $capsule->setAsGlobal();
+
+// // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+// $capsule->bootEloquent();
+
+// require ('jobs.php');
+
+
+
+
+//SE QUITA TODO EL CONTENIDO PORQUE ES UNA VISTA DEL PATRON MVC
+
+?> -->
+
+{# <?php
+
+ $name = 'Juan Diego';
+ $apellidos = 'Acosta Taborda';
+ $limitMonths = 2000;
+?> #} 
+
+{%
+
+  extends 'layout.twig'
+
+%}
+    
+
+{%
+
+  block content
+
+%}
+
+<div id="resume-header" class="row">
+      <div class="col-3">
+        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
+      </div>
+      <div class="col">
+        <h1>{{ name ~ " " ~ apellidos }}</h1>
+        <h2>PHP Developer</h2>
+        <ul>
+          <li>Mail: hector@mail.com</li>
+          <li>Phone: 1234567890</li>
+          <li>LinkedIn: https://linkedin.com</li>
+          <li>Twitter: @hectorbenitez</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="border-bottom-gray" >Carrer Summary</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div>
+          <h3 class="border-bottom-gray" >Work Experience</h3>
+        <ul>
+            {% for job in jobs %}
+              <li class="work-position">
+                <h5>{{ job.title }}</h5>
+                <p>{{ job.description }}</p>
+                <img src="Uploads/{{ job.logoName }}"width="10%"height="10%">
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+            <h3 class="border-bottom-gray">Projects</h3>
+
+           <ul>
+               {% for project in projects %}
+                  <li class="work-position"> 
+                    <h5>{{ project.title }}</h5>
+                    <p>{{ project.description }}</p>
+                  <img src="Uploads/{{ project.logoName }}"width="10%"height="10%">
+                  </li>
+               {% endfor %}  
+          </ul>
+
+            <div class="project">
+                <h5>Project X</h5>
+                <div class="row">
+                    <div class="col-3">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
+                      </div>
+                      <div class="col">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores iste consequatur consequuntur, autem sed corporis distinctio rem veritatis eius natus voluptatibus tenetur! Excepturi architecto repellat hic voluptates necessitatibus aut ut reiciendis voluptatibus eius, cumque itaque mollitia autem incidunt, blanditiis culpa!</p>
+                        <strong>Technologies used:</strong>
+                        <span class="badge badge-secondary">PHP</span>
+                        <span class="badge badge-secondary">HTML</span>
+                        <span class="badge badge-secondary">CSS</span>
+                      </div>
+                </div>
+            </div>
+            <div class="project">
+                <h5>Project X</h5>
+                <div class="row">
+                    <div class="col-3">
+                        <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
+                      </div>
+                      <div class="col">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
+                        <strong>Technologies used:</strong>
+                        <span class="badge badge-secondary">PHP</span>
+                        <span class="badge badge-secondary">HTML</span>
+                        <span class="badge badge-secondary">CSS</span>
+                      </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-3">
+        <h3 class="border-bottom-gray" >Skills & Tools</h3>
+        <h4>Backend</h4>
+        <ul>
+          <li>PHP</li>
+        </ul>
+        <h4>Frontend</h4>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <h4>Frameworks</h4>
+        <ul>
+          <li>Laravel</li>
+          <li>Bootstrap</li>
+        </ul>
+        <h3 class="border-bottom-gray" >Languages</h3>
+        <ul>
+          <li>Spanish</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+    <div id="resume-footer" class="row">
+      <div class="col">
+          Designed by @juandiegoacosta01
+      </div>
+
+
+
+
+    </div>
+
+
+
+{%
+
+  endblock
+
+%}
