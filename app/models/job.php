@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace App\models;
 
 require_once ('BaseElement.php');
 
