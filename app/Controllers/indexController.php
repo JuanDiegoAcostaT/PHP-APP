@@ -12,12 +12,12 @@ class indexController extends BaseController {
         $projects = Project::all(); 
 
 
-        // $name = 'Juan Diego';
-        // $apellidos = 'Acosta Taborda';
-        // $limitMonths = 2000;
+        $name = 'Juan Diego';
+        $apellidos = 'Acosta Taborda';
+        $limitMonths = 2000;
 
 
-        return  $this -> renderHTML('index.twig', [
+        return  $this-> renderHTML('index.twig', [
             'name' => $name,
             'apellidos' => $apellidos,
             'jobs' => $jobs,
