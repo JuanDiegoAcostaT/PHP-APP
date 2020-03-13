@@ -92,7 +92,7 @@ $map->post('saveJob', '/jobs/add', [
     'controller' => 'App\Controllers\jobsController',
     'action' => 'getAddJobAction'
 ]);
-$map->post('saveProject', '/projects/add/', [
+$map->post('saveProject', '/projects/add', [
     'controller' => 'App\Controllers\projectsController', 
     'action' => 'getAddProjectAction'
 ]);
